@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: 'Mobile',
+        price: 10000
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'Laptop';
+      console.log(product);
+
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating:{
+          stars:4.5,
+          count:58
+        },
+        fun: function f1(){
+          console.log('Fucntion inside the object');
+        }
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']); //we have to use brackets because the minus sign is math, so, to avoid these we use square brackets.
+      
+      console.log(product2.rating.count);
+      console.log(product2.rating.stars);
+
+      product2.fun();
+
+      console.log(typeof console.log); //output is "function" because console is a obejct and log is a JS function
+
+      console.log(JSON.stringify(product2));// to convert JS to JSON
+
+      const jsonString = JSON.stringify(product2); 
+      console.log(JSON.parse(jsonString)); // to convert JSON to JS
+      
+      console.log('Paramesh'.length);
+      console.log('hello'.toUpperCase());
+      
+      const object1 = {
+        message: 'Hello',
+        price: 899
+      };
+      const object2 = object1; //Call by Reference
+
+      object1.message = 'Good Job!';
+
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'Good Job!',
+        price: 899
+      };
+
+      console.log(object3===object1); //false
+      console.log(object2===object1); //true
+
+      //const message = object3.message;
+
+      const { message,price } = object3; //Destructuring Shortcut: if the variable name and property name are same.
+      console.log(message);
+      console.log(price);
+
+      const object = {
+        message,
+        method(){
+          console.log('Shorthand Method');
+        }
+      };
+      console.log(object);
+      object.method();
+
+    </script>
+  </body>
+  </html>
