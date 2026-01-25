@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Exercises</title>
+  </head>
+  <body>
+    <button>Button</button>
+    <button class="js-change">Button</button>
+    <button onclick="
+      document.querySelector('.js-coin').innerHTML='You Choose: Heads'
+    ">Heads</button>
+    <button onclick="
+      document.querySelector('.js-coin').innerHTML='You Choose: Tails'
+    ">Tails</button>
+    <p class="js-coin"></p>
+    <script>
+      console.log(document.querySelector('button'));
+      console.log(document.querySelector('.js-change').innerHTML='Button2');
+        
+    </script>
+  </body>
+</html>
+
+
+
