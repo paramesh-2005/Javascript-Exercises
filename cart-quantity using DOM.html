@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart-Quantity</title>
+  </head>
+  <body>
+
+    <p>Cart Quantity</p>
+
+    <button onclick="
+    displayQuantity();
+    ">Show Qunatity</button>
+
+    <button onclick="
+    cartQuantity++;
+    displayQuantity();
+    ">Add to cart</button>
+
+    <button onclick="
+    cartQuantity+=2;
+    displayQuantity();
+    ">+2</button>
+
+    <button onclick="
+    cartQuantity=cartQuantity+3;
+    displayQuantity();
+    ">+3</button>
+
+    <button onclick="
+    cartQuantity = 0;
+    displayQuantity();
+    localStorage.removeItem('cartQuantity');
+    console.log('Cart was reset');
+    ">Reset cart</button>
+
+    <button onclick="
+    cartQuantity+=4;
+    displayQuantity();
+    ">+4</button>
+
+    <button onclick="
+    cartQuantity+=5;
+    displayQuantity();
+    ">+5</button>
+
+    <button onclick="
+    cartQuantity--;
+    displayQuantity();
+    console.log('Removed 1 item from the cart');
+    ">Remove from cart</button>
+
+    <button onclick="
+    cartQuantity-=2;
+    displayQuantity();
+    ">-2</button>
+
+    <button onclick="
+    cartQuantity-=3;
+    displayQuantity();
+    ">-3</button>
+
+    <p class="js-quantity"></p>
+
+    <script>
+
+      let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || 0;
+
+      function displayQuantity(){
+        document.querySelector('.js-quantity').innerHTML=`Cart Quantity: ${cartQuantity}`;
+        localStorage.setItem('cartQuantity',JSON.stringify(cartQuantity));
+      }
+
+    </script>
+
+  </body>
+</html>

@@ -4,6 +4,7 @@
     <title>DOM Exercises</title>
   </head>
   <body>
+
     <button>Button</button>
     <button class="js-change">Button</button>
     <button onclick="
@@ -13,9 +14,37 @@
       document.querySelector('.js-coin').innerHTML='You Choose: Tails'
     ">Tails</button>
     <p class="js-coin"></p>
+
+    <input placeholder = "Enter your name" class = "js-name-input" onkeydown = "handleNameKeydown(event);">
+    <button onclick="
+      inputName();
+    ">Submit</button>
+    <p class = "js-your-name"></p>
+
+     <input placeholder="Type something" class="js-input"
+      onkeyup="
+        const inputElement = document.querySelector('.js-input');
+        document.querySelector('.js-message')
+          .innerHTML = inputElement.value;
+      ">
+    <p class="js-message"></p>
+
     <script>
+
       console.log(document.querySelector('button'));
       console.log(document.querySelector('.js-change').innerHTML='Button2');
+
+      function inputName(){
+        const inputElement = document.querySelector('.js-name-input');
+        const name = inputElement.value;
+        document.querySelector('.js-your-name').innerHTML=`Your name is: ${name}`;
+      }
+
+       function handleNameKeydown(event){
+        if(event.key === 'Enter'){
+        inputName();
+        }
+      }
         
     </script>
   </body>
